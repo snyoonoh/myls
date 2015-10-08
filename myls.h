@@ -1,7 +1,6 @@
 /*
  * Filename: myls.h
  * Author: Seung Yoon Oh
- * Userid: cs30xiy
  * Description: function prototypes and struct
  * Date: Dec 2, 2014
  */

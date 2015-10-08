@@ -1,7 +1,6 @@
 /* 
  * Filename: nameSortAscending.s
  * Author: Seung Yoon Oh
- * Userid: cs30xiy
  * Date: Dec 3, 2014
  * Sources of Help:
  */

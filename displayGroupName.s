@@ -1,7 +1,6 @@
 /* 
  * Filename: displayGroupName.s
  * Author: Seung Yoon Oh
- * Userid: cs30xiy
  * Date: Dec 9, 2014
  * Sources of Help:
  */

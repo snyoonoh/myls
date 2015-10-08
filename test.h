@@ -1,7 +1,6 @@
 /*
  * Filename: test.h
  * Author: Seung Yoon Oh
- * Userid: cs30xiy
  * Description: test.h used for unit testing
  * Date: Dec 2, 2014
  */

@@ -1,7 +1,6 @@
 /*
  * Filename: strings.h
  * Author: Seung Yoon Oh
- * Userid: cs30xiy
  * Description: Strings used in pa4(myls)
  * Date: Dec 2, 2014
  */

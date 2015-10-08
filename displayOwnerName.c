@@ -1,7 +1,6 @@
 /*
  * Filename: displayOwnerName.c
  * Author: Seung Yoon Oh
- * Userid: cs30xiy
  * Date: Dec 9, 2014
  */
 

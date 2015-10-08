@@ -1,7 +1,6 @@
 /*
  * Filename: testsizeSortAscending.c
  * Author: Seung Yoon Oh
- * Userid: cs30xiy
  * Description: Unit test for sizeSortAscending
  * Date: Dec 2, 2014
  */

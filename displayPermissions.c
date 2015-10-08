@@ -1,7 +1,6 @@
 /*
  * Filename: displayPermissions.c
  * Author: Seung Yoon Oh
- * Userid: cs30xiy
  * Date: Dec 2, 2014
  */
 

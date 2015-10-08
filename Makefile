@@ -1,7 +1,6 @@
 #
 # Filename: Makefile
 # Author: Seung Yoon Oh
-# Userid: cs30xiy
 # Description: Makefile template for CSE 30 -- PA4(myls)
 # Date: Dec 2, 2014
 #

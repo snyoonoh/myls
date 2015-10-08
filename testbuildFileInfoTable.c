@@ -1,7 +1,6 @@
 /*
  * Filename: testbuildFileInfoTable.c
  * Author: Seung Yoon Oh
- * Userid: cs30xiy
  * Description: Unit test for buildFileInfoTable
  * Date: Dec 2, 2014
  */

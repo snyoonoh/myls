@@ -1,7 +1,6 @@
 /*
  * Filename: testsetDisplayMode.c
  * Author: Seung Yoon Oh
- * Userid: cs30xiy
  * Description: Unit test for setDisplayMode.c
  * Date: Dec 2, 2014
  */ 
