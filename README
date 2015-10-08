@@ -1,7 +1,6 @@
 /*
  * Filename: README
  * Author: Seung Yoon Oh
- * Userid: cs30xiy
  * Date: 12/10/2014
  */
 
@@ -16,7 +15,9 @@ files. You can also use a flag to see invisible files or ignore backup files.
 How to compile
 --------------
     To compile this program, simply navigate to the directory containing the
-source files for PA4 (which should include the Makefile) and type 'make'.
+source files for PA4 (which should include the Makefile) and type 'make'. However,
+you must compile on a machine that can compile SPARC assembly language; I have
+used a Solaris machine.
 
 How to run
 ----------
