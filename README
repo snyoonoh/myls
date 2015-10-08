@@ -1,0 +1,394 @@
+/*
+ * Filename: README
+ * Author: Seung Yoon Oh
+ * Userid: cs30xiy
+ * Date: 12/10/2014
+ */
+
+Description
+-----------
+    This program is a recreation of the ls command in linux. It shows the files 
+within the current directory or within a directory or file if there is one that
+is specified. There are flags that you can set to set the options of ordering 
+files from ascending to descending or vice versa or order by size or name of the
+files. You can also use a flag to see invisible files or ignore backup files.
+
+How to compile
+--------------
+    To compile this program, simply navigate to the directory containing the
+source files for PA4 (which should include the Makefile) and type 'make'.
+
+How to run
+----------
+    To run the program, either just type ./myls if you want to look at the 
+current directory or specify a directory you want to list. You may also add
+flags to make the listing more to your liking.
+
+For example:
+     
+    (to see current directory) 
+    ./myls
+
+    (to see current directory with invisible files and without backupfiles)
+    ./myls -aB
+
+    (to see in long list style)
+    ./myls -l
+
+    (to see long list style with invisible files of directory /dev
+    .myls -l /dev
+
+Normal output
+-------------
+(when reading from current directory)
+./myls
+=============================================================================
+[cs30xiy@ieng9]:pa4:1175$ ./myls
+.:
+BACKUP~
+Makefile
+README
+buildFileInfoTable.c
+buildFileInfoTable.ln
+buildFileInfoTable.o
+dir1
+dir2
+displayFileInfo.c
+displayFileInfo.ln
+displayFileInfo.o
+displayGroupName.o
+displayGroupName.s
+displayOwnerName.c
+displayOwnerName.ln
+displayOwnerName.o
+displayPermissions.c
+displayPermissions.ln
+displayPermissions.o
+empty_file
+globals.c
+globals.ln
+globals.o
+myls
+myls.c
+myls.h
+myls.ln
+myls.o
+name
+name1
+nameR
+nameR1
+nameSortAscending.o
+nameSortAscending.s
+nameSortDescending.c
+nameSortDescending.ln
+nameSortDescending.o
+no_permissions_file
+normal_file
+pa4test
+ref_buildFileInfoTable.o
+setDisplayMode.c
+setDisplayMode.ln
+setDisplayMode.o
+size
+size1
+sizeR
+sizeR1
+sizeSortAscending.o
+sizeSortAscending.s
+sizeSortDescending.c
+sizeSortDescending.ln
+sizeSortDescending.o
+strings.h
+test.h
+testbuildFileInfoTable
+testbuildFileInfoTable.c
+testsetDisplayMode.c
+testsizeSortAscending.c
+=============================================================================
+(current directy with -laB flags set)
+[cs30xiy@ieng9]:pa4:1176$ ./myls -laB
+.:
+drwxr-x---   5 cs30xiy  cs30x       4096  Dec 10 17:56 .
+drwxr-x---  15 cs30xiy  cs30x       4096  Dec 10 17:50 ..
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  4 13:19 .Makefile.swp
+-rw-------   1 cs30xiy  cs30x      12288  Dec 10 17:56 .README.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  2 16:49 .buildFileInfoTable.c.swo
+-rw-------   1 cs30xiy  cs30x      12288  Dec  2 15:58 .buildFileInfoTable.c.swp
+-rw-r-----   1 cs30xiy  cs30x      20480  Dec 10 17:42 .displayFileInfo.c.swo
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  8 16:50 .displayPermissions.c.swo
+drwxr-x---   8 cs30xiy  cs30x       4096  Dec 10 17:27 .git
+-rw-r-----   1 cs30xiy  cs30x         40  Dec  2 14:03 .gitignore
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec 10 12:40 .myls.c.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec 10 10:10 .myls.h.swk
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  8 17:15 .myls.h.swl
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  4 12:51 .myls.h.swm
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  3 18:08 .myls.h.swn
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  2 15:21 .myls.h.swo
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  2 16:17 .myls.h.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  4 13:00 .setDisplayMode.c.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  4 14:21 .sizeSortAscending.s.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec 10 12:53 .strings.h.swn
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  2 15:22 .strings.h.swo
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  4 13:16 .strings.h.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  4 13:15 .testbuildFileInfoTable.c.swo
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  2 16:38 .testbuildFileInfoTable.c.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Dec  3 18:17 .testsetDisplayMode.c.swo
+-rw-------   1 cs30xiy  cs30x      12288  Dec  2 15:08 .testsetDisplayMode.c.swp
+-rw-r-----   1 cs30xiy  cs30x       3194  Dec 10 15:56 Makefile
+-rw-r-----   1 cs30xiy  cs30x       2901  Dec 10 17:56 README
+-rw-r-----   1 cs30xiy  cs30x       3938  Dec 10 11:01 buildFileInfoTable.c
+-rw-r-----   1 cs30xiy  cs30x      54483  Dec 10 17:34 buildFileInfoTable.ln
+-rw-r-----   1 cs30xiy  cs30x       7216  Dec 10 17:34 buildFileInfoTable.o
+drwxr-x---   2 cs30xiy  cs30x       4096  Dec 10 17:33 dir1
+drwxr-x---   2 cs30xiy  cs30x       4096  Dec 10 17:33 dir2
+-rw-r-----   1 cs30xiy  cs30x       5580  Dec 10 17:41 displayFileInfo.c
+-rw-r-----   1 cs30xiy  cs30x      58128  Dec 10 17:54 displayFileInfo.ln
+-rw-r-----   1 cs30xiy  cs30x       7796  Dec 10 17:54 displayFileInfo.o
+-rw-r-----   1 cs30xiy  cs30x        908  Dec 10 17:34 displayGroupName.o
+-rw-r-----   1 cs30xiy  cs30x       1252  Dec 10 15:55 displayGroupName.s
+-rw-r-----   1 cs30xiy  cs30x       1115  Dec 10 15:30 displayOwnerName.c
+-rw-r-----   1 cs30xiy  cs30x      37057  Dec 10 17:34 displayOwnerName.ln
+-rw-r-----   1 cs30xiy  cs30x       3440  Dec 10 17:34 displayOwnerName.o
+-rw-r-----   1 cs30xiy  cs30x       2325  Dec 10 12:44 displayPermissions.c
+-rw-r-----   1 cs30xiy  cs30x      36925  Dec 10 17:34 displayPermissions.ln
+-rw-r-----   1 cs30xiy  cs30x       4612  Dec 10 17:34 displayPermissions.o
+-rw-r-----   1 cs30xiy  cs30x          0  Dec 10 17:33 empty_file
+-rw-r-----   1 cs30xiy  cs30x        311  Dec 10 12:40 globals.c
+-rw-r-----   1 cs30xiy  cs30x      13750  Dec 10 17:34 globals.ln
+-rw-r-----   1 cs30xiy  cs30x       1576  Dec 10 17:34 globals.o
+-rwxr-x---   1 cs30xiy  cs30x      31184  Dec 10 17:54 myls
+-rw-r-----   1 cs30xiy  cs30x       1866  Dec 10 12:40 myls.c
+-rw-r-----   1 cs30xiy  cs30x       1164  Dec  9 18:59 myls.h
+-rw-r-----   1 cs30xiy  cs30x      41471  Dec 10 17:34 myls.ln
+-rw-r-----   1 cs30xiy  cs30x       4752  Dec 10 17:34 myls.o
+-rw-r-----   1 cs30xiy  cs30x        775  Dec 10 11:24 name
+-rw-r-----   1 cs30xiy  cs30x        775  Dec 10 11:24 name1
+-rw-r-----   1 cs30xiy  cs30x        781  Dec 10 11:25 nameR
+-rw-r-----   1 cs30xiy  cs30x        781  Dec 10 11:25 nameR1
+-rw-r-----   1 cs30xiy  cs30x        592  Dec 10 17:34 nameSortAscending.o
+-rw-r-----   1 cs30xiy  cs30x        987  Dec 10 11:00 nameSortAscending.s
+-rw-r-----   1 cs30xiy  cs30x       1179  Dec  9 20:37 nameSortDescending.c
+-rw-r-----   1 cs30xiy  cs30x      40725  Dec 10 17:34 nameSortDescending.ln
+-rw-r-----   1 cs30xiy  cs30x       3308  Dec 10 17:34 nameSortDescending.o
+----------   1 cs30xiy  cs30x          0  Dec 10 17:33 no_permissions_file
+-rw-r-----   1 cs30xiy  cs30x        176  Dec 10 17:33 normal_file
+-rwxr-x---   1 cs30xiy  cs30x      12028  Dec 10 10:05 pa4test
+-rw-r-----   1 cs30xiy  cs30x       1232  Dec 10 14:54 ref_buildFileInfoTable.o
+-rw-r-----   1 cs30xiy  cs30x       1886  Dec  9 18:59 setDisplayMode.c
+-rw-r-----   1 cs30xiy  cs30x      40715  Dec 10 17:34 setDisplayMode.ln
+-rw-r-----   1 cs30xiy  cs30x       3688  Dec 10 17:34 setDisplayMode.o
+-rw-r-----   1 cs30xiy  cs30x        781  Dec 10 11:25 size
+-rw-r-----   1 cs30xiy  cs30x        781  Dec 10 11:25 size1
+-rw-r-----   1 cs30xiy  cs30x        788  Dec 10 11:25 sizeR
+-rw-r-----   1 cs30xiy  cs30x        788  Dec 10 11:25 sizeR1
+-rw-r-----   1 cs30xiy  cs30x        604  Dec 10 17:34 sizeSortAscending.o
+-rw-r-----   1 cs30xiy  cs30x       1257  Dec  9 19:47 sizeSortAscending.s
+-rw-r-----   1 cs30xiy  cs30x        941  Dec  9 20:35 sizeSortDescending.c
+-rw-r-----   1 cs30xiy  cs30x      35345  Dec 10 17:34 sizeSortDescending.ln
+-rw-r-----   1 cs30xiy  cs30x       3140  Dec 10 17:34 sizeSortDescending.o
+-rw-r-----   1 cs30xiy  cs30x        758  Dec  9 18:59 strings.h
+-rw-r-----   1 cs30xiy  cs30x        592  Dec  9 18:59 test.h
+-rwxr-x---   1 cs30xiy  cs30x      20040  Dec 10 17:32 testbuildFileInfoTable
+-rw-r-----   1 cs30xiy  cs30x       2995  Dec 10 17:33 testbuildFileInfoTable.c
+-rw-r-----   1 cs30xiy  cs30x       1670  Dec  9 18:59 testsetDisplayMode.c
+-rw-r-----   1 cs30xiy  cs30x       1654  Dec  9 18:59 testsizeSortAscending.c
+=============================================================================
+(reading from two other directories)
+
+[cs30xiy@ieng9]:pa4:1178$ ./myls -laB /dev ~/pa3
+/dev:
+drwxr-xr-x  83 root     sys           20  Oct  1 07:09 .
+drwxr-xr-x  25 root     root          28  Oct  1 07:12 ..
+crw-rw-rw-   1 root     sys      187   0  Oct  1 07:09 arp
+crw-rw-rw-   1 root     sys      313   0  Oct  1 07:09 bpf
+crw-rw-rw-   1 root     sys      210   0  Oct  1 07:09 conslog
+lrwxrwxrwx   1 root     root           0  Oct  1 07:09 console
+drwxr-xr-x   3 root     sys            3  Aug 24  2012 cpu
+crw-rw-rw-   1 root     sys      203   0  Oct  1 07:09 crypto
+crw-r--r--   1 root     sys      202   0  Oct  1 07:09 cryptoadm
+drwxr-xr-x  12 root     sys            2  Jun 25 07:29 cs30x
+crw-rw-rw-   1 root     sys      201   0  Oct  1 07:09 dld
+drwxr-xr-x   2 root     sys            2  Aug 24  2012 dsk
+drwxr-xr-x   5 root     sys            4  Aug 25  2012 dtrace
+lrwxrwxrwx   1 root     root           0  Oct  1 07:09 dtremote
+dr-xr-xr-x   2 root     root        8208  Dec 10 17:57 fd
+crw-rw-rw-   1 root     sys      206   0  Oct  1 07:09 icmp
+crw-rw-rw-   1 root     sys      207   0  Oct  1 07:09 icmp6
+crw-rw-rw-   1 root     sys      208   0  Oct  1 07:09 ip
+crw-rw-rw-   1 root     sys      211   0  Oct  1 07:09 ip6
+crw-rw-rw-   1 root     sys        7   3  Oct  1 07:09 ipauth
+crw-rw-rw-   1 root     sys        7   0  Oct  1 07:09 ipf
+crw-rw-rw-   1 root     sys        7   0  Oct  1 07:09 ipl
+crw-rw-rw-   1 root     sys        7   6  Oct  1 07:09 iplookup
+crw-rw-rw-   1 root     sys      204   2  Oct  1 07:09 ipmpstub
+crw-rw-rw-   1 root     sys        7   1  Oct  1 07:09 ipnat
+drwxr-xr-x   4 root     sys            2  Aug 24  2012 ipnet
+crw-rw-rw-   1 root     sys        7   5  Oct  1 07:09 ipscan
+crw-rw-rw-   1 root     sys      214   0  Oct  1 07:09 ipsecah
+crw-rw-rw-   1 root     sys      215   0  Oct  1 07:09 ipsecesp
+crw-rw-rw-   1 root     sys        7   2  Oct  1 07:09 ipstate
+crw-rw-rw-   1 root     sys        7   4  Oct  1 07:09 ipsync
+crw-rw-rw-   1 root     sys      218   0  Oct  1 07:09 keysock
+crw-rw-rw-   1 root     sys      221   0  Oct  1 07:09 kstat
+crw-rw-rw-   1 root     sys      212   1  Oct  1 07:09 lo0
+drwxr-xr-x   2 root     sys            2  Aug 24  2012 lofi
+crw-r--r--   1 root     sys      224   0  Oct  1 07:09 lofictl
+crw-r-----   1 root     sys      210   5  Oct  1 07:09 log
+crw-------   1 root     sys      190 225  Oct  1 07:09 logindmux
+lrwxrwxrwx   1 root     root           0  Oct  1 07:09 msglog
+drwxr-xr-x   3 root     sys            2  Aug 24  2012 net
+crw-rw-rw-   1 root     sys       35   0  Oct  1 07:09 nsmb
+crw-rw-rw-   1 root     sys      226   2  Dec 10 17:57 null
+crw-r--r--   1 root     sys      229   0  Oct  1 07:09 openprom
+crw-rw-rw-   1 root     sys      232   0  Dec 10 17:19 poll
+crw-rw-rw-   1 root     sys       78   1  Oct  1 07:09 pool
+crw-rw-rw-   1 root     sys      190 235  Oct  1 07:09 ptmx
+drwxr-xr-x 264 root     sys            2  Aug 24  2012 pts
+crw-r--r--   1 root     sys      238   0  Oct  1 07:09 random
+crw-rw-rw-   1 root     sys      206   0  Oct  1 07:09 rawip
+crw-rw-rw-   1 root     sys      207   0  Oct  1 07:09 rawip6
+drwxr-xr-x   2 root     sys            2  Aug 24  2012 rdsk
+drwxr-xr-x   2 root     sys            2  Aug 24  2012 rlofi
+drwxr-xr-x   2 root     sys            2  Aug 24  2012 rmt
+crw-rw-rw-   1 root     sys      240   0  Oct  1 07:09 rts
+drwxr-xr-x   4 root     sys            2  Aug 24  2012 sad
+crw-r--r--   1 root     sys       13   0  Oct  1 07:09 sdpib
+crw-rw-rw-   1 root     sys      248   0  Oct  1 07:09 spdsock
+crw-------   1 root     sys      190 159  Oct  1 07:09 sppp
+crw-------   1 root     sys      190 158  Oct  1 07:09 sppptun
+lrwxrwxrwx   1 root     root           0  Oct  1 07:09 stderr
+lrwxrwxrwx   1 root     root           0  Oct  1 07:09 stdin
+lrwxrwxrwx   1 root     root           0  Oct  1 07:09 stdout
+drwxr-xr-x   2 root     sys            2  Aug 24  2012 swap
+lrwxrwxrwx   1 root     root           0  Oct  1 07:09 syscon
+crw-------   1 root     sys      250   0  Oct  1 07:09 sysevent
+lrwxrwxrwx   1 root     root           0  Oct  1 07:09 sysmsg
+lrwxrwxrwx   1 root     root           0  Oct  1 07:09 systty
+crw-rw-rw-   1 root     sys      245   0  Oct  1 07:09 tcp
+crw-rw-rw-   1 root     sys      252   0  Oct  1 07:09 tcp6
+drwxr-xr-x   2 root     sys            2  Aug 24  2012 term
+crw-rw-rw-   1 root     sys      253   2  Oct  1 07:09 ticlts
+crw-rw-rw-   1 root     sys      253   0  Oct  1 07:09 ticots
+crw-rw-rw-   1 root     sys      253   1  Oct  1 07:09 ticotsord
+crw-rw-rw-   1 root     tty      249   0  Dec 10 17:23 tty
+crw-rw-rw-   1 root     sys      254   0  Oct  1 07:09 udp
+crw-rw-rw-   1 root     sys      255   0  Oct  1 07:09 udp6
+crw-r--r--   1 root     sys      238   1  Oct  1 07:09 urandom
+crw-rw-rw-   1 root     sys       38   0  Oct  1 07:09 uvfs
+crw-rw-rw-   1 root     sys      204   1  Oct  1 07:09 vni
+crw--w----   1 root     tty      178  11  Dec 10 17:48 zconsole
+crw-rw-rw-   1 root     sys      226  12  Oct  1 07:09 zero
+crw-rw-rw-   1 root     sys      323   0  Oct  1 07:09 zfs
+drwxr-xr-x   4 root     sys            4  Aug 25  2012 zvol
+/home/solaris/ieng9/cs30x/cs30xiy/pa3:
+drwxr-x---   3 cs30xiy  cs30x       4096  Dec 10 17:50 .
+drwxr-x---  15 cs30xiy  cs30x       4096  Dec 10 17:50 ..
+drwxr-x---   8 cs30xiy  cs30x       4096  Nov 27 00:05 .git
+-rw-r-----   1 cs30xiy  cs30x         48  Nov 18 13:40 .gitignore
+-rw-r-----   1 cs30xiy  cs30x      20480  Nov 26 18:22 .main.c.swn
+-rw-r-----   1 cs30xiy  cs30x      16384  Nov 26 17:47 .main.c.swo
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 26 14:38 .main.c.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 26 15:49 .pa3.h.swm
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 20 19:10 .pa3.h.swn
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 19 18:07 .pa3.h.swo
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 18 13:57 .pa3.h.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 20 19:46 .printEnglish.s.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 26 14:52 .processIntToken.c.swo
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 26 17:11 .processIntToken.c.swp
+-rw-r-----   1 cs30xiy  cs30x      16384  Dec  2 16:07 .setFlags.c.swm
+-rw-r-----   1 cs30xiy  cs30x      16384  Nov 26 16:01 .setFlags.c.swn
+-rw-r-----   1 cs30xiy  cs30x      16384  Nov 26 18:20 .setFlags.c.swo
+-rw-------   1 cs30xiy  cs30x      12288  Nov 18 14:45 .setFlags.c.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 26 15:37 .strToLong.s.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 26 16:38 .strings.h.swk
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 26 14:56 .strings.h.swl
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 20 21:48 .strings.h.swm
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 20 16:07 .strings.h.swn
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 19 18:04 .strings.h.swo
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 18 13:58 .strings.h.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 26 17:22 .test.txt.swo
+-rw-------   1 cs30xiy  cs30x      12288  Nov 19 17:50 .testprintEnglish.c.swp
+-rw-r-----   1 cs30xiy  cs30x      12288  Nov 18 15:03 .testprintIntBinary.c.swp
+-rw-r-----   1 cs30xiy  cs30x       3866  Nov 26 22:40 Makefile
+-rw-r-----   1 cs30xiy  cs30x       2752  Nov 26 23:56 README
+-rw-r-----   1 cs30xiy  cs30x       1803  Nov 25 16:41 \
+-rw-r-----   1 cs30xiy  cs30x       2554  Nov 20 15:06 checkRange.s
+-rw-r-----   1 cs30xiy  cs30x       3810  Nov 26 23:51 main.c
+-rw-r-----   1 cs30xiy  cs30x       1131  Nov 26 20:03 pa3.h
+-rwxr-x---   1 cs30xiy  cs30x      12552  Nov 20 19:11 pa3test
+-rw-r-----   1 cs30xiy  cs30x       2220  Nov 25 14:19 printBase.s
+-rw-r-----   1 cs30xiy  cs30x       2301  Dec  8 18:10 printEnglish.s
+-rw-r-----   1 cs30xiy  cs30x       2124  Dec  8 01:48 printFPBinary.s
+-rw-r-----   1 cs30xiy  cs30x       2117  Dec  8 01:53 printIntBinary.s
+-rw-r-----   1 cs30xiy  cs30x       2322  Nov 27 00:04 processFPToken.c
+-rw-r-----   1 cs30xiy  cs30x       3278  Nov 26 23:19 processIntToken.c
+-rwxr-x---   1 cs30xiy  cs30x      13172  Nov 25 20:19 setFlags
+-rw-r-----   1 cs30xiy  cs30x       5090  Nov 26 23:50 setFlags.c
+-rw-r-----   1 cs30xiy  cs30x       2658  Dec  8 01:52 strToLong.s
+-rw-r-----   1 cs30xiy  cs30x       1803  Nov 25 21:59 strings.h
+-rw-r-----   1 cs30xiy  cs30x        408  Nov 25 22:00 test.h
+-rw-r-----   1 cs30xiy  cs30x         12  Nov 26 22:07 test.txt
+-rwxr-x---   1 cs30xiy  cs30x       9772  Nov 26 22:15 testprintBase
+-rw-r-----   1 cs30xiy  cs30x       1451  Nov 26 22:15 testprintBase.c
+-rwxr-x---   1 cs30xiy  cs30x      10424  Nov 25 14:14 testprintEnglish
+-rw-r-----   1 cs30xiy  cs30x       1894  Nov 25 14:11 testprintEnglish.c
+-rwxr-x---   1 cs30xiy  cs30x       9784  Nov 25 15:41 testprintFPBinary
+-rw-r-----   1 cs30xiy  cs30x       1725  Nov 25 15:41 testprintFPBinary.c
+-rwxr-x---   1 cs30xiy  cs30x      10804  Nov 18 15:50 testprintIntBinary
+-rw-r-----   1 cs30xiy  cs30x       3292  Nov 20 16:48 testprintIntBinary.c
+-rwxr-x---   1 cs30xiy  cs30x      14708  Nov 26 23:47 testprocessFPToken
+-rw-r-----   1 cs30xiy  cs30x       1982  Nov 26 23:47 testprocessFPToken.c
+-rwxr-x---   1 cs30xiy  cs30x      15952  Nov 26 23:20 testprocessIntToken
+-rw-r-----   1 cs30xiy  cs30x       3184  Nov 26 23:43 testprocessIntToken.c
+
+Abnormal output
+---------------
+
+<abnormal output when inputting wrong flag>
+
+[cs30xiy@ieng9]:pa4:1184$ ./myls -K
+./myls: illegal option -- K
+Usage: ./myls [-alrSB] [file ...]
+
+<abnormal output when inputting wrong directory>
+[cs30xiy@ieng9]:pa4:1192$ ./myls sjafoaj
+lstat --sjafoaj: No such file or directory
+
+<abnormal output when allocation fails>
+[cs30xiy@ieng9]:pa4:1194$ ./myls        
+.:
+Attempted to allocate memory in buildFileInfoTable(): Not enough space
+Only partial info will be displayed.
+Makefile
+dir1
+myls.h
+setDisplayMode.c
+sizeSortAscending.s
+strings.h
+
+Testing
+-------
+
+For the files setDisplayMode.c, buildFileInfoTable.c, sizeSortAscending.s I
+used unit tests to tests their functionalities. For the entire program I 
+basically piped the result of myls program and diff'ed it to the piped result
+of the sample program "pa4test".
+
+For Example,
+I would do ./myls -laBr /dev > a
+           ./pa4test -laBr /dev > b
+           diff a b
+
+           and if there are no outputs after diff, I know I did it correctly
+
+
+To test for abnormal values i basically did the commands in the "Abnormal 
+Output" section above. To test for allocation failure I ran the command
+ulimit -d 8 so I could limit the memory that I started with in order to 
+see the error
+
+Anything Else
+-------------
+For whoever uses this program I am grateful that my hardwork has resulted into
+a useful program. I Hope you have fun using this program as much as I had 
+creating it :).
